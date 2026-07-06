@@ -54,3 +54,20 @@ public class Main{
 
 EXERCISE:
 1. Create a new instance of ```Store``` called ```lemonadeStand``` in the ```main()``` method of Main.java and pass “lemonade” as the argument.
+```java
+public class Main{
+  public static void main(String[] args) {    
+    Store lemonadeStand = new Store("lemonade");
+  }
+}
+```
+
+2. Inside the ```main()``` method, print the instance field ```productType``` from ```lemonadeStand```.
+```java
+public class Main{
+  public static void main(String[] args) {    
+    Store lemonadeStand = new Store("lemonade");
+    System.out.println(lemonadeStand.productType);
+  }
+}
+```
