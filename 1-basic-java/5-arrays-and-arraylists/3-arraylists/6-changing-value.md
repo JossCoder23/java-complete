@@ -1,0 +1,146 @@
+## Changing a Value
+When we were using arrays, we could rewrite entries by using bracket notation to reassign values:
+```java
+String[] shoppingCart = {"Trench Coat", "Tweed Houndstooth Hat", "Magnifying Glass"};
+
+shoppingCart[0] = "Tweed Cape";
+
+// shoppingCart now holds ["Tweed Cape", "Tweed Houndstooth Hat", "Magnifying Glass"]
+```
+
+```ArrayList``` has a slightly different way of doing this, using the ```set()``` method:
+```java
+ArrayList<String> shoppingCart = new ArrayList<String>();
+
+shoppingCart.add("Trench Coat");
+shoppingCart.add("Tweed Houndstooth Hat");
+shoppingCart.add("Magnifying Glass");
+
+shoppingCart.set(0, "Tweed Cape");
+
+// shoppingCart now holds ["Tweed Cape", "Tweed Houndstooth Hat", "Magnifying Glass"]
+```
+
+**ToDos.java**
+```java
+import java.util.ArrayList;
+
+class ToDos {
+    
+    public static void main(String[] args) {
+        
+        // Sherlock
+        ArrayList<String> sherlocksToDos = new ArrayList<String>();
+        
+        sherlocksToDos.add("visit the crime scene");
+        sherlocksToDos.add("play violin");
+        sherlocksToDos.add("interview suspects");
+        sherlocksToDos.add("solve the case");
+        sherlocksToDos.add("apprehend the criminal");
+        
+        // Poirot
+        ArrayList<String> poirotsToDos = new ArrayList<String>();
+        
+        poirotsToDos.add("visit the crime scene");
+        poirotsToDos.add("interview suspects");
+        poirotsToDos.add("let the little grey cells do their work");
+        poirotsToDos.add("trim mustache");
+        poirotsToDos.add("call all suspects together");
+        poirotsToDos.add("reveal the truth of the crime");
+        
+        // Set each to-do below:
+        
+        
+        System.out.println("Sherlock's to-do list:");
+        System.out.println(sherlocksToDos.toString() + "\n");
+        System.out.println("Poirot's to-do list:");
+        System.out.println(poirotsToDos.toString());
+    }
+    
+}
+```
+
+EXERCISE:
+1. Modify ```sherlocksToDos``` so that the value at ```"play violin"``` becomes ```"listen to Dr. Watson for amusement"```.
+
+    SOLUTION:
+    ```java
+    import java.util.ArrayList;
+
+    class ToDos {
+        
+        public static void main(String[] args) {
+            
+            // Sherlock
+            ArrayList<String> sherlocksToDos = new ArrayList<String>();
+            
+            sherlocksToDos.add("visit the crime scene");
+            sherlocksToDos.add("play violin");
+            sherlocksToDos.add("interview suspects");
+            sherlocksToDos.add("solve the case");
+            sherlocksToDos.add("apprehend the criminal");
+            
+            // Poirot
+            ArrayList<String> poirotsToDos = new ArrayList<String>();
+            
+            poirotsToDos.add("visit the crime scene");
+            poirotsToDos.add("interview suspects");
+            poirotsToDos.add("let the little grey cells do their work");
+            poirotsToDos.add("trim mustache");
+            poirotsToDos.add("call all suspects together");
+            poirotsToDos.add("reveal the truth of the crime");
+            
+            // Set each to-do below:
+            sherlocksToDos.set(1, "listen to Dr. Watson for amusement"); 
+            
+            System.out.println("Sherlock's to-do list:");
+            System.out.println(sherlocksToDos.toString() + "\n");
+            System.out.println("Poirot's to-do list:");
+            System.out.println(poirotsToDos.toString());
+        }
+    
+    }
+    ```
+
+2. Modify ```poirotsToDos``` so that the value at ```"trim mustache"``` becomes ```"listen to Captain Hastings for amusement"```.
+
+    SOLUTION:
+
+    ```java
+    import java.util.ArrayList;
+
+    class ToDos {
+        
+        public static void main(String[] args) {
+            
+            // Sherlock
+            ArrayList<String> sherlocksToDos = new ArrayList<String>();
+            
+            sherlocksToDos.add("visit the crime scene");
+            sherlocksToDos.add("play violin");
+            sherlocksToDos.add("interview suspects");
+            sherlocksToDos.add("solve the case");
+            sherlocksToDos.add("apprehend the criminal");
+            
+            // Poirot
+            ArrayList<String> poirotsToDos = new ArrayList<String>();
+            
+            poirotsToDos.add("visit the crime scene");
+            poirotsToDos.add("interview suspects");
+            poirotsToDos.add("let the little grey cells do their work");
+            poirotsToDos.add("trim mustache");
+            poirotsToDos.add("call all suspects together");
+            poirotsToDos.add("reveal the truth of the crime");
+            
+            // Set each to-do below:
+            sherlocksToDos.set(1, "listen to Dr. Watson for amusement");
+            poirotsToDos.set(3, "listen to Captain Hastings for amusement"); 
+            
+            System.out.println("Sherlock's to-do list:");
+            System.out.println(sherlocksToDos.toString() + "\n");
+            System.out.println("Poirot's to-do list:");
+            System.out.println(poirotsToDos.toString());
+        }
+    
+    }
+    ```

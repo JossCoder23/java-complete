@@ -83,8 +83,53 @@ EXERCISE:
     SOLUTION:
 
     ```java
-    
+    import java.util.ArrayList;
+
+    class ToDos {
+        
+      public static void main(String[] args) {
+        
+        ArrayList<String> toDoList = new ArrayList<String>();
+        String toDo1 = "Water plants";
+        // Add more to-dos here:
+        String toDo2 = "Go to bread";
+        String toDo3 = "Clean my room";
+        
+        // Add to-dos to toDoList
+        
+        
+        System.out.println(toDoList);
+          
+        
+      }
+      
+    }
     ```
 
 2. Use ```.add()``` to add ```toDo1```, ```toDo2```, and ```toDo3``` to ```toDoList```.
 
+  ```java
+  import java.util.ArrayList;
+
+  class ToDos {
+      
+    public static void main(String[] args) {
+      
+      ArrayList<String> toDoList = new ArrayList<String>();
+      String toDo1 = "Water plants";
+      // Add more to-dos here:
+      String toDo2 = "Go to bread";
+      String toDo3 = "Clean my room";
+      
+      // Add to-dos to toDoList
+      toDoList.add(toDo1);
+      toDoList.add(toDo2);
+      toDoList.add(toDo3);
+      
+      System.out.println(toDoList);
+        
+      
+    }
+    
+  }
+  ```
