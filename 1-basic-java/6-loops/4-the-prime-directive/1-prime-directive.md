@@ -12,6 +12,27 @@ Your prime directive: Build a PrimeDirective.java program that creates an ```Arr
 
 Code review available when you’re done
 
+BASE:
+
+**PrimeDirective.java**
+```java
+// Import statement:
+
+class PrimeDirective {
+  
+  // Add your methods here:
+  
+  
+    public static void main(String[] args) {
+
+        PrimeDirective pd = new PrimeDirective();
+        int[] numbers = {6, 29, 28, 33, 11, 100, 101, 43, 89};
+
+    }  
+
+}
+```
+
 ===================================================================
 
 1. Take a look at **PrimeDirective.java**:
@@ -22,6 +43,26 @@ Code review available when you’re done
 
     To Do: Import ```ArrayList``` from ```java.util``` at the very top of your program, above the ```PrimeDirective``` class. This will allow you to use ```ArrayList```s.
 
+    **SOLUTION:**
+
+    ```java
+    // Import statement:
+    import java.util.ArrayList;
+
+    class PrimeDirective {
+    
+        // Add your methods here:
+        
+        public static void main(String[] args) {
+
+            PrimeDirective pd = new PrimeDirective();
+            int[] numbers = {6, 29, 28, 33, 11, 100, 101, 43, 89};
+
+        }  
+
+    }
+    ```
+
 ### Optimus Prime
 2. First, we need a way to determine whether a number is prime or isn’t prime.
 
@@ -30,6 +71,33 @@ Code review available when you’re done
     has one parameter: an ```int``` called ```number```
     will return ```true``` if ```number``` is prime
     will return ```false``` if ```number``` is not prime
+
+    **SOLUTION:**
+
+    ```java
+    // Import statement:
+    import java.util.ArrayList;
+
+    class PrimeDirective {
+    
+        // Add your methods here:
+        public boolean isPrime(int number) {
+            if( number % 3 == 0 ){
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public static void main(String[] args) {
+
+            PrimeDirective pd = new PrimeDirective();
+            int[] numbers = {6, 29, 28, 33, 11, 100, 101, 43, 89};
+
+        }  
+
+    }
+    ```
 
 3. Take a moment to consider what makes a prime number prime:
 
@@ -50,6 +118,31 @@ Code review available when you’re done
     * run the loop while ```i``` is less than number
     * increment ```i```
 
+    **SOLUTION:**
+
+    ```java
+    // Import statement:
+    import java.util.ArrayList;
+
+    class PrimeDirective {
+    
+        // Add your methods here:
+        public boolean isPrime(int number) {
+            for( int i = 2; i < number; i++ ) {
+            
+            }
+        }
+
+        public static void main(String[] args) {
+
+            PrimeDirective pd = new PrimeDirective();
+            int[] numbers = {6, 29, 28, 33, 11, 100, 101, 43, 89};
+
+        }  
+
+    }
+    ```
+
 5. As you loop through each ```i``` value, you want to check if ```number``` is divisible by it.
 
     Inside the loop:
@@ -57,7 +150,64 @@ Code review available when you’re done
     * Check if ```number``` is divisible by i.
     * If it is, then ```number``` is not prime, so you can return ```false``` from the method.
 
+    **SOLUTION:**
+
+    ```java
+    // Import statement:
+    import java.util.ArrayList;
+
+    class PrimeDirective {
+    
+        // Add your methods here:
+        public boolean isPrime(int number) {
+            for( int i = 2; i < number; i++ ) {
+                if( number % i == 0 ) {
+                    return false;
+                } else {
+                    
+                }
+            }
+        }
+
+        public static void main(String[] args) {
+
+            PrimeDirective pd = new PrimeDirective();
+            int[] numbers = {6, 29, 28, 33, 11, 100, 101, 43, 89};
+
+        }  
+
+    }
+    ```
+
 6. Below the ```for``` loop, return ```true``` because ```number``` isn’t divisible by any two smaller integers.
+
+    **SOLUTION:**
+
+    ```java
+    // Import statement:
+    import java.util.ArrayList;
+
+    class PrimeDirective {
+    
+        // Add your methods here:
+        public boolean isPrime(int number) {
+            for( int i = 2; i < number; i++ ) {
+                if( number % i == 0 ) {
+                    return false;
+                } 
+            }
+            return true;
+        }
+
+        public static void main(String[] args) {
+
+            PrimeDirective pd = new PrimeDirective();
+            int[] numbers = {6, 29, 28, 33, 11, 100, 101, 43, 89};
+
+        }  
+
+    }
+    ```
 
 7. Wait a second… what about 2 or numbers less than 2? Well, those are our edge cases.
 
@@ -65,6 +215,43 @@ Code review available when you’re done
 
     * If ```number``` is 2, it is the smallest prime number.
     * If ```number``` is less than 2, it is not prime.
+
+    **SOLUTION:**
+
+    ```java
+    // Import statement:
+    import java.util.ArrayList;
+
+    class PrimeDirective {
+    
+        // Add your methods here:
+        public boolean isPrime(int number) {
+            
+            if(number == 2) {
+                return true;
+            } else if( number < 2 ) {
+                return false;
+            }
+            
+            for( int i = 2; i < number; i++ ) {
+                if( number % i == 0 ) {
+                    return false;
+                } 
+            }
+
+            return true;
+
+        }
+
+        public static void main(String[] args) {
+
+            PrimeDirective pd = new PrimeDirective();
+            int[] numbers = {6, 29, 28, 33, 11, 100, 101, 43, 89};
+
+        }  
+
+    }
+    ```
 
 8. Test out your ```isPrime()``` method on ```pd``` in ```main()``` and see if it works!
 
@@ -80,6 +267,48 @@ Code review available when you’re done
     java PrimeDirective
     ```
 
+    **SOLUTION:**
+
+    ```java
+    // Import statement:
+    // Import statement:
+    import java.util.ArrayList;
+
+    class PrimeDirective {
+    
+        // Add your methods here:
+        public boolean isPrime(int number) {
+
+            if(number == 2) {
+                return true;
+            } else if( number < 2 ) {
+                return false;
+            }
+
+            for( int i = 2; i < number; i++ ) {
+                if( number % i == 0 ) {
+                    return false;
+                } 
+            }
+
+            return true;
+
+        }
+        
+        public static void main(String[] args) {
+
+            PrimeDirective pd = new PrimeDirective();
+            int[] numbers = {6, 29, 28, 33, 11, 100, 101, 43, 89};
+            System.out.println(pd.isPrime(7));
+            System.out.println(pd.isPrime(28));
+            System.out.println(pd.isPrime(2));
+            System.out.println(pd.isPrime(0));
+
+        }  
+
+    }
+    ```
+
 ### Only Primes
 
 9. Nice work! Now, all that’s left is building an ```ArrayList``` of the prime ```numbers``` in the numbers array.
@@ -89,15 +318,259 @@ Code review available when you’re done
     * returns an ```ArrayList``` of integers
     * has a parameter ```numbers```, which is an array of ```int```s
 
+    **SOLUTION:**
+
+    ```java
+    // Import statement:
+    // Import statement:
+    import java.util.ArrayList;
+
+    class PrimeDirective {
+    
+        // Add your methods here:
+        public boolean isPrime(int number) {
+
+            if(number == 2) {
+                return true;
+            } else if( number < 2 ) {
+                return false;
+            }
+
+            for( int i = 2; i < number; i++ ) {
+                if( number % i == 0 ) {
+                    return false;
+                } 
+            }
+
+            return true;
+            
+        }
+
+        public ArrayList<Integer> onlyPrimes(int[] numbers) {
+
+        }
+        
+        public static void main(String[] args) {
+
+            PrimeDirective pd = new PrimeDirective();
+            int[] numbers = {6, 29, 28, 33, 11, 100, 101, 43, 89};
+            System.out.println(pd.isPrime(7));
+            System.out.println(pd.isPrime(28));
+            System.out.println(pd.isPrime(2));
+            System.out.println(pd.isPrime(0));
+
+        }  
+
+    }
+    ```
+
 10. Inside the ```onlyPrimes()``` body, create a new empty ```ArrayList``` called ```primes``` to store all the prime numbers that are found.
+
+    **SOLUTION:**
+
+    ```java
+    // Import statement:
+    // Import statement:
+    import java.util.ArrayList;
+
+    class PrimeDirective {
+    
+        // Add your methods here:
+        public boolean isPrime(int number) {
+
+            if(number == 2) {
+                return true;
+            } else if( number < 2 ) {
+                return false;
+            }
+
+            for( int i = 2; i < number; i++ ) {
+                if( number % i == 0 ) {
+                    return false;
+                } 
+            }
+
+            return true;
+            
+        }
+
+        public ArrayList<Integer> onlyPrimes(int[] numbers) {
+            ArrayList<Integer> primes = new ArrayList<Integer>();
+        }
+        
+        public static void main(String[] args) {
+
+            PrimeDirective pd = new PrimeDirective();
+            int[] numbers = {6, 29, 28, 33, 11, 100, 101, 43, 89};
+            System.out.println(pd.isPrime(7));
+            System.out.println(pd.isPrime(28));
+            System.out.println(pd.isPrime(2));
+            System.out.println(pd.isPrime(0));
+
+        }  
+
+    }
+    ```
 
 11. So how do you find all of the primes in an array? By using a for-each loop!
 
     Set up a for-each loop that checks each ```number``` in ```numbers```.
 
+    **SOLUTION:**
+
+    ```java
+    // Import statement:
+    // Import statement:
+    import java.util.ArrayList;
+
+    class PrimeDirective {
+    
+        // Add your methods here:
+        public boolean isPrime(int number) {
+
+            if(number == 2) {
+                return true;
+            } else if( number < 2 ) {
+                return false;
+            }
+
+            for( int i = 2; i < number; i++ ) {
+                if( number % i == 0 ) {
+                    return false;
+                } 
+            }
+
+            return true;
+            
+        }
+
+        public ArrayList<Integer> onlyPrimes(int[] numbers) {
+            ArrayList<Integer> primes = new ArrayList<Integer>();
+            for ( int number : numbers ) {
+      
+            }
+        }
+        
+        public static void main(String[] args) {
+
+            PrimeDirective pd = new PrimeDirective();
+            int[] numbers = {6, 29, 28, 33, 11, 100, 101, 43, 89};
+            System.out.println(pd.isPrime(7));
+            System.out.println(pd.isPrime(28));
+            System.out.println(pd.isPrime(2));
+            System.out.println(pd.isPrime(0));
+
+        }  
+
+    }
+    ```
+
 12. Now, if ```number``` is prime, you can add it to ```primes```.
 
+    **SOLUTION:**
+
+    ```java
+    // Import statement:
+    // Import statement:
+    import java.util.ArrayList;
+
+    class PrimeDirective {
+    
+        // Add your methods here:
+        public boolean isPrime(int number) {
+
+            if(number == 2) {
+                return true;
+            } else if( number < 2 ) {
+                return false;
+            }
+
+            for( int i = 2; i < number; i++ ) {
+                if( number % i == 0 ) {
+                    return false;
+                } 
+            }
+
+            return true;
+            
+        }
+
+        public ArrayList<Integer> onlyPrimes(int[] numbers) {
+            ArrayList<Integer> primes = new ArrayList<Integer>();
+            for ( int number : numbers ) {
+                if( number % 2 == 0 ) {
+                    primes.add(number);
+                }
+            }
+        }
+        
+        public static void main(String[] args) {
+
+            PrimeDirective pd = new PrimeDirective();
+            int[] numbers = {6, 29, 28, 33, 11, 100, 101, 43, 89};
+            System.out.println(pd.isPrime(7));
+            System.out.println(pd.isPrime(28));
+            System.out.println(pd.isPrime(2));
+            System.out.println(pd.isPrime(0));
+
+        }  
+
+    }
+    ```
+
 13. At the end of the method below the for-each loop, return ```primes``` from ```onlyPrimes()```.
+
+    **SOLUTION:**
+
+    ```java
+    // Import statement:
+    // Import statement:
+    import java.util.ArrayList;
+
+    class PrimeDirective {
+    
+        // Add your methods here:
+        public boolean isPrime(int number) {
+
+            if(number == 2) {
+                return true;
+            } else if( number < 2 ) {
+                return false;
+            }
+
+            for( int i = 2; i < number; i++ ) {
+                if( number % i == 0 ) {
+                    return false;
+                } 
+            }
+
+            return true;
+            
+        }
+
+        public ArrayList<Integer> onlyPrimes(int[] numbers) {
+            ArrayList<Integer> primes = new ArrayList<Integer>();
+            for ( int number : numbers ) {
+                if( number % 2 == 0 ) {
+                    primes.add(number);
+                }
+            }
+            return primes;
+        }
+        
+        public static void main(String[] args) {
+
+            PrimeDirective pd = new PrimeDirective();
+            int[] numbers = {6, 29, 28, 33, 11, 100, 101, 43, 89};
+            System.out.println(pd.isPrime(7));
+            System.out.println(pd.isPrime(28));
+            System.out.println(pd.isPrime(2));
+            System.out.println(pd.isPrime(0));
+
+        }  
+
+    }
+    ```
 
 14. Time to put it all together!
 
@@ -106,6 +579,59 @@ Code review available when you’re done
     Don’t forget to run your code with
     ```git
     java PrimeDirective
+    ```
+
+    **SOLUTION:**
+
+    ```java
+    // Import statement:
+    // Import statement:
+    import java.util.ArrayList;
+
+    class PrimeDirective {
+    
+        // Add your methods here:
+        public boolean isPrime(int number) {
+
+            if(number == 2) {
+                return true;
+            } else if( number < 2 ) {
+                return false;
+            }
+
+            for( int i = 2; i < number; i++ ) {
+                if( number % i == 0 ) {
+                    return false;
+                } 
+            }
+
+            return true;
+            
+        }
+
+        public ArrayList<Integer> onlyPrimes(int[] numbers) {
+            ArrayList<Integer> primes = new ArrayList<Integer>();
+            for ( int number : numbers ) {
+                if( number % 2 == 0 ) {
+                    primes.add(number);
+                }
+            }
+            return primes;
+        }
+        
+        public static void main(String[] args) {
+
+            PrimeDirective pd = new PrimeDirective();
+            int[] numbers = {6, 29, 28, 33, 11, 100, 101, 43, 89};
+            System.out.println(pd.isPrime(7));
+            System.out.println(pd.isPrime(28));
+            System.out.println(pd.isPrime(2));
+            System.out.println(pd.isPrime(0));
+            System.out.println(pd.onlyPrimes(numbers));
+
+        }  
+
+    }
     ```
 
 ### Primed For More
