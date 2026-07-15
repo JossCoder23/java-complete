@@ -93,6 +93,36 @@ Build out a Java package with these classes to model real-world language familie
     The language follows the word order: subject-verb-object.
     ```
 
+    **SOLUTION:**
+
+    **Language.java**
+    ```java
+    class Language {
+
+        protected String name;
+        protected int numSpeakers;
+        protected String regionsSpoken;
+        protected String wordOrder;
+
+        Language(String newName, int newNumSpeakers, String newRegionsSpoken, String newWordOrder) {
+            this.name = newName;
+            this.numSpeakers = newNumSpeakers;
+            this.regionsSpoken = newRegionsSpoken;
+            this.wordOrder = newWordOrder;
+        }
+
+        public void getInfo() {
+            System.out.println(this.name + " is spoken by " + this.numSpeakers + " people mainly in " + this.regionsSpoken + ".");
+            System.out.println("The language follows the word order: " + this.wordOrder + ".");
+        }
+
+        public static void main(String[] args) {
+            
+        }
+        
+    }
+    ```
+
 4. Let’s test out the code so far!
 
     In ```main()```, instantiate a new ```Language``` of your choice.
@@ -101,11 +131,51 @@ Build out a Java package with these classes to model real-world language familie
 
     Run your code in the terminal to see if the information gets printed. If nothing displays, try compiling your code first.
 
+    **SOLUTION:**
+
+    **Language.java**
+    ```java
+    class Language {
+
+        protected String name;
+        protected int numSpeakers;
+        protected String regionsSpoken;
+        protected String wordOrder;
+
+        Language(String newName, int newNumSpeakers, String newRegionsSpoken, String newWordOrder) {
+            this.name = newName;
+            this.numSpeakers = newNumSpeakers;
+            this.regionsSpoken = newRegionsSpoken;
+            this.wordOrder = newWordOrder;
+        }
+
+        public void getInfo() {
+            System.out.println(this.name + " is spoken by " + this.numSpeakers + " people mainly in " + this.regionsSpoken + ".");
+            System.out.println("The language follows the word order: " + this.wordOrder + ".");
+        }
+
+        public static void main(String[] args) {
+            Language spanish = new Language("Spanish", 555000000, "Spain, Latin America, and Equatorial Guinea", "subject-verb-object");
+            spanish.getInfo();
+        }
+        
+    }
+    ```
+
 ### Not just an ancient civilization
 
 5. Nice work! Now let’s model a language family.
 
     Tab over to **Mayan.java** and create an empty ```Mayan``` class that inherits from ```Language```.
+
+    **SOLUTION:**
+
+    **Mayan.java**
+    ```java
+    class Mayan extends Language {
+  
+    }
+    ```
 
 6. Mayan languages share several traits in common including:
 
@@ -116,6 +186,19 @@ Build out a Java package with these classes to model real-world language familie
 
     Bear in mind that each language will still require its own ```name``` and ```numSpeakers```.
 
+    **SOLUTION:**
+
+    **Mayan.java**
+    ```java
+    class Mayan extends Language {
+
+        Mayan(String nameLanguage, int numSpeakers) {
+            super(nameLanguage, numSpeakers, "Central America", "verb-object-subject");
+        }
+
+    }
+    ```
+
 7. Mayan languages have an interesting grammatical feature: ```ergativity```.
 
     Override the ```getInfo()``` method for ```Mayan``` so that if we called ```getInfo()``` on a Mayan language like Ki’che’, we’d get the following info:
@@ -124,6 +207,26 @@ Build out a Java package with these classes to model real-world language familie
     Ki'che' is spoken by 2330000 people mainly in Central America.
     The language follows the word order: verb-object-subject
     Fun fact: Ki'che' is an ergative language.
+    ```
+
+    **SOLUTION:**
+
+    **Mayan.java**
+    ```java
+    class Mayan extends Language {
+
+        Mayan(String nameLanguage, int numSpeakers) {
+            super(nameLanguage, numSpeakers, "Central America", "verb-object-subject");
+        }
+
+        @Override
+        public void getInfo() {
+            System.out.println(this.name + " is spoken by " + this.numSpeakers + " people mainly in " + this.regionsSpoken + ".");
+            System.out.println("The language follows the word order: " + this.wordOrder);
+            System.out.println("Fun fact: " + this.name + " is an ergative language.");
+        }
+
+    }
     ```
 
 
@@ -137,11 +240,53 @@ Build out a Java package with these classes to model real-world language familie
 
     Run your code in the terminal to see if the information gets printed. If nothing displays, try compiling your code first.
 
+    **SOLUTION:**
+
+    **Language.java**
+    ```java
+    class Language {
+
+        protected String name;
+        protected int numSpeakers;
+        protected String regionsSpoken;
+        protected String wordOrder;
+
+        public Language(String newName, int newNumSpeakers, String newRegionsSpoken, String newWordOrder) {
+            this.name = newName;
+            this.numSpeakers = newNumSpeakers;
+            this.regionsSpoken = newRegionsSpoken;
+            this.wordOrder = newWordOrder;
+        }
+
+        public void getInfo() {
+            System.out.println(this.name + " is spoken by " + this.numSpeakers + " people mainly in " + this.regionsSpoken + ".");
+            System.out.println("The language follows the word order: " + this.wordOrder + ".");
+        }
+
+        public static void main(String[] args) {
+            Language spanish = new Language("Spanish", 555000000, "Spain, Latin America, and Equatorial Guinea", "subject-verb-object");
+            spanish.getInfo();
+            Mayan mayan = new Mayan("Ki'che'", 800000);
+            mayan.getInfo();
+        }
+
+    }
+    ```
+
 ### Heading east...
 
 9. The Sino-Tibetan family has the second highest number of native speakers of any language family.
 
     Tab over to **SinoTibetan.** and build out an empty ```SinoTibetan``` class that inherits from ```Language```.
+
+    **SOLUTION:**
+
+    **SinoTibetan.java**
+    ```java
+    class SinoTibetan extends Language {
+
+    }
+    ```
 
 10. Like the Mayan language family, Sino-Tibetan languages share several traits in common. In this case:
 
@@ -152,6 +297,17 @@ Build out a Java package with these classes to model real-world language familie
 
     Remember — each language will still require its own ```name``` and ```numSpeakers```.
 
+    **SOLUTION:**
+
+    **SinoTibetan.java**
+    ```java
+    class SinoTibetan extends Language {
+        SinoTibetan(String sinoName, int sinoNumSpeakers) {
+            super(sinoName, sinoNumSpeakers, "Asia", "subject-object-verb");
+        }
+    }
+    ```
+
 11. So that word order thing? There is actually a ```split in the Sino-Tibetan family on this```.
 
     It turns out that at some point (a long time ago) the Chinese languages (among a few others) switched the object and verb order. So they now follow a subject-verb-object pattern. Hmm… How can we handle this?
@@ -159,6 +315,20 @@ Build out a Java package with these classes to model real-world language familie
     One (imperfect) tactic is to check if the language’s ```name``` field contains ```"Chinese"```. There’s a ```Java string method``` to check if a string contains a substring.
 
     In the constructor, below where you called ```super()```, change the ```wordOrder``` to ```"subject-verb-object"``` if ```this.name``` contains ```"Chinese"```.
+
+    **SOLUTION:**
+
+    **SinoTibetan.java**
+    ```java
+    class SinoTibetan extends Language {
+        SinoTibetan(String sinoName, int sinoNumSpeakers) {
+            super(sinoName, sinoNumSpeakers, "Asia", "subject-object-verb");
+            if( sinoName.contains("Chinese") ) {
+                this.wordOrder = "subject-verb-object";
+            }
+        }
+    }
+    ```
 
 ### Wrapping up
 
@@ -172,6 +342,43 @@ Build out a Java package with these classes to model real-world language familie
     Then call ```getInfo()``` on each language variable.
 
     Run your code in the terminal to see if the information gets printed. If nothing displays, try compiling your code first.
+
+    **SOLUTION:**
+
+    **Language.java**
+    ```java
+    class Language {
+
+        protected String name;
+        protected int numSpeakers;
+        protected String regionsSpoken;
+        protected String wordOrder;
+
+        public Language(String newName, int newNumSpeakers, String newRegionsSpoken, String newWordOrder) {
+            this.name = newName;
+            this.numSpeakers = newNumSpeakers;
+            this.regionsSpoken = newRegionsSpoken;
+            this.wordOrder = newWordOrder;
+        }
+
+        public void getInfo() {
+            System.out.println(this.name + " is spoken by " + this.numSpeakers + " people mainly in " + this.regionsSpoken + ".");
+            System.out.println("The language follows the word order: " + this.wordOrder + ".");
+        }
+
+        public static void main(String[] args) {
+            Language spanish = new Language("Spanish", 555000000, "Spain, Latin America, and Equatorial Guinea", "subject-verb-object");
+            spanish.getInfo();
+            Mayan mayan = new Mayan("Ki'che'", 800000);
+            mayan.getInfo();
+            SinoTibetan mandarin = new SinoTibetan("Mandarin Chinese", 1110000000);
+            mandarin.getInfo();
+            SinoTibetan burmese = new SinoTibetan("Burmese", 43000000);
+            burmese.getInfo();
+        }
+
+    }
+    ```
 
 13. Congrats on all your work with Java Inheritance and Polymorphism! You’ve built out some useful classes for a linguist out there.
 
