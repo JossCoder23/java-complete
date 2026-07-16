@@ -138,7 +138,7 @@ EXERCISE:
     ```java
     public class Main {
         public static void main(String[] args) {
-            
+
             // Given runner lap data
             double[][] times = {{64.791, 75.972, 68.950, 79.039, 73.006, 74.157}, {67.768, 69.334, 70.450, 67.667, 75.686, 76.298}, {72.653, 77.649, 74.245, 62.121, 63.379, 79.354}};
             
@@ -164,6 +164,116 @@ EXERCISE:
 
     Add a line in the body of the inner ```for``` loop to sum up the values for each row in the runner data and store the result in the variable ```runnerTime```.
 
+    **SOLUTION:**
+
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            
+            // Given runner lap data
+            double[][] times = {{64.791, 75.972, 68.950, 79.039, 73.006, 74.157}, {67.768, 69.334, 70.450, 67.667, 75.686, 76.298}, {72.653, 77.649, 74.245, 62.121, 63.379, 79.354}};
+            
+            double runnerTime = 0.0;
+
+            for(int outer = 0; outer < times.length; outer++) {
+                runnerTime = 0.0;
+                for(int inner = 0; inner < times[outer].length; inner++) {
+                    System.out.println("Runner index: " + outer + ", Time index: " + inner);
+                    // Add a line to sum up the values in each row.
+                    runnerTime += times[outer][inner];
+                }
+                double averageVal = 0;
+
+                System.out.println("Sum of runner " + outer + " times: " + runnerTime);
+                System.out.println("Average of runner " + outer + ": " + averageVal);
+            }
+
+        }
+    }
+    ```
+
+    OUTPUT: 
+    ```git
+    Runner index: 0, Time index: 0
+    Runner index: 0, Time index: 1
+    Runner index: 0, Time index: 2
+    Runner index: 0, Time index: 3
+    Runner index: 0, Time index: 4
+    Runner index: 0, Time index: 5
+    Sum of runner 0 times: 435.9149999999999
+    Average of runner 0: 0.0
+    Runner index: 1, Time index: 0
+    Runner index: 1, Time index: 1
+    Runner index: 1, Time index: 2
+    Runner index: 1, Time index: 3
+    Runner index: 1, Time index: 4
+    Runner index: 1, Time index: 5
+    Sum of runner 1 times: 427.2030000000001
+    Average of runner 1: 0.0
+    Runner index: 2, Time index: 0
+    Runner index: 2, Time index: 1
+    Runner index: 2, Time index: 2
+    Runner index: 2, Time index: 3
+    Runner index: 2, Time index: 4
+    Runner index: 2, Time index: 5
+    Sum of runner 2 times: 429.401
+    Average of runner 2: 0.0
+    ```
+
 3. Below the nested ```for``` loops, we have a variable called ```averageVal```.
 
     Write a line to find the average time of each runner and store it in ```averageVal```.
+
+    **SOLUTION:**
+
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            // Given runner lap data
+            double[][] times = {{64.791, 75.972, 68.950, 79.039, 73.006, 74.157}, {67.768, 69.334, 70.450, 67.667, 75.686, 76.298}, {72.653, 77.649, 74.245, 62.121, 63.379, 79.354}};
+            
+            double runnerTime = 0.0;
+            for(int outer = 0; outer < times.length; outer++) {
+                runnerTime = 0.0;
+                for(int inner = 0; inner < times[outer].length; inner++) {
+                    System.out.println("Runner index: " + outer + ", Time index: " + inner);
+                        // Add a line to sum up the values in each row.
+                    runnerTime += times[outer][inner];
+                
+                }
+                double averageVal = 0;
+                averageVal = runnerTime / times[outer].length;;
+                System.out.println("Sum of runner " + outer + " times: " + runnerTime);
+                System.out.println("Average of runner " + outer + ": " + averageVal);
+            }
+        }
+    }
+    ```
+
+    OUTPUT:
+    ```git
+    Runner index: 0, Time index: 0
+    Runner index: 0, Time index: 1
+    Runner index: 0, Time index: 2
+    Runner index: 0, Time index: 3
+    Runner index: 0, Time index: 4
+    Runner index: 0, Time index: 5
+    Sum of runner 0 times: 435.9149999999999
+    Average of runner 0: 72.65249999999999
+    Runner index: 1, Time index: 0
+    Runner index: 1, Time index: 1
+    Runner index: 1, Time index: 2
+    Runner index: 1, Time index: 3
+    Runner index: 1, Time index: 4
+    Runner index: 1, Time index: 5
+    Sum of runner 1 times: 427.2030000000001
+    Average of runner 1: 71.20050000000002
+    Runner index: 2, Time index: 0
+    Runner index: 2, Time index: 1
+    Runner index: 2, Time index: 2
+    Runner index: 2, Time index: 3
+    Runner index: 2, Time index: 4
+    Runner index: 2, Time index: 5
+    Sum of runner 2 times: 429.401
+    Average of runner 2: 71.56683333333334
+    ```
