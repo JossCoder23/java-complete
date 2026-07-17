@@ -84,10 +84,33 @@ public class Introduction {
     * a ```String hobbies``` that contains a list of your hobbies
     * an ```int age``` that contains your age
 
+    **SOLUTION:**
+    ```java
+    public class Introduction {
+        public static void main(String[] args) {
+            String name = "Jose Pardo";
+            String hobbies = "play music, to read, to play soccer";
+            int age = 30;
+        }
+    }
+    ```
+
 2. Use ```System.out.println()``` to print your ```name``` in the following format:
 
     ```git
     My name is ___
+    ```
+
+    **SOLUTION:**
+    ```java
+    public class Introduction {
+        public static void main(String[] args) {
+            String name = "Jose Pardo";
+            String hobbies = "play music, to read, to play soccer";
+            int age = 30;
+            System.out.println("My name is " + name);
+        }
+    }
     ```
 
 3. Use ```System.out.printf()``` to print your ```age``` in the following format:
@@ -96,12 +119,52 @@ public class Introduction {
     "I am __ years old"
     ```
 
+    **SOLUTION:**
+    ```java
+    public class Introduction {
+        public static void main(String[] args) {
+            String name = "Jose Pardo";
+            String hobbies = "play music, to read, to play soccer";
+            int age = 30;
+            System.out.println("My name is " + name);
+            System.out.printf("I am %d years old", age);
+        }
+    }
+    ```
+
 4. Use ```System.out.print()``` to print your ```hobbies``` using the following format:
 
     ```git
     My hobbies are ______
     ```
 
+    **SOLUTION:**
+    ```java
+    public class Introduction {
+        public static void main(String[] args) {
+            String name = "Jose Pardo";
+            String hobbies = "play music, to read, to play soccer";
+            int age = 30;
+            System.out.println("My name is " + name);
+            System.out.printf("I am %d years old", age);
+            System.out.print("My hobbies are " + hobbies);
+        }
+    }
+    ```
+
 5. Hmm… Notice anything strange about the output? It looks like we need to add a new line character in order to get our text to format properly for the user.
 
     Go back to your ```.printf()``` statement and add ```\n``` to the end of the string.
+
+    ```java
+    public class Introduction {
+        public static void main(String[] args) {
+            String name = "Jose Pardo";
+            String hobbies = "play music, to read, to play soccer";
+            int age = 30;
+            System.out.println("My name is " + name);
+            System.out.printf("I am %d years old", age);
+            System.out.print("My hobbies are " + hobbies);
+        }
+    }
+    ```
