@@ -37,8 +37,59 @@ import java.io.Serializable;
     * A ```private String``` named ```make```.
     * A ```private int``` named ```year```.
 
+    **SOLUTION:**
+
+    ```java
+    import java.io.Serializable;
+
+    public class Car {
+        private String make;
+        private int year;
+    }
+    ```
+
 2. Let’s implement the ```Serializable``` interface (this has been imported for you) in the ```Car class``` to inform the JVM that ```Car``` objects are serializable.
+
+    **SOLUTION:**
+
+    ```java
+    import java.io.Serializable;
+
+    public class Car implements Serializable {
+        private String make;
+        private int year;
+    }
+    ```
 
 3. We need to provide the JVM with a unique identifier when converting a serialized stream of bytes back into an object with a ```serialVersionUID```. Add a ```private static final long``` to the ```Car class``` named ```serialVersionUID``` with a value of ```1L```.
 
+    **SOLUTION:**
+
+    ```java
+    import java.io.Serializable;
+
+    public class Car implements Serializable {
+        private String make;
+        private int year;
+        private static final long serialVersionUID = 1L;
+    }
+    ```
+
 4. Finally, create a ```public``` constructor with two parameters, a ```String``` and ```int``` type named ```make``` and ```year``` respectively. Initialize the member fields ```make``` and ```year``` to the parameters make and ```year``` in the constructor.
+
+    ```java
+    import java.io.Serializable;
+
+    public class Car implements Serializable {
+        
+        private String make;
+        private int year;
+        private static final long serialVersionUID = 1L;
+
+        public Car(String make, int year) {
+            this.make = make;
+            this.year = year;
+        }
+        
+    }
+    ```
